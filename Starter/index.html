@@ -1,81 +1,520 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NewsFlash | Home</title>
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
-    <!-- Remix icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <!-- Swiper.js styles -->
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css"/>
-    <!-- Custom styles -->
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
-    <!-- Header -->
+
+<!-- ========== HEADER ========== -->
 <header class="header" id="header">
     <nav class="navbar-container">
+        <a href="./index.html"><h2 class="logo">NewsFlash</h2></a>
 
-        <a href="./index.html">
-            <h2 class="logo">NewsFlash</h2>
-        </a>
         <div class="menu" id="menu">
             <ul class="list">
-            <li class="list-item">
-                    <a href="#" class="list-link">Home</a>
+                <li class="list-item"><a href="./index.html" class="list-link current">Home</a></li>
+                <li class="list-item"><a href="#categories" class="list-link">Categories</a></li>
+                <li class="list-item"><a href="#older-posts" class="list-link">Articles</a></li>
+                <li class="list-item"><a href="#popular-tags" class="list-link">Tags</a></li>
+                <li class="list-item"><a href="#newsletter" class="list-link">Newsletter</a></li>
+                <li class="list-item"><a href="#footer" class="list-link">Contact</a></li>
+                <li class="list-item screen-lg-hidden">
+                    <a href="#" class="list-link">Sign In</a>
                 </li>
-                <li class="list-item">
-                    <a href="#" class="list-link">Categories</a>
-                </li>
-                <li class="list-item">
-                    <a href="#" class="list-link">Reviews</a>
-                </li>
-                <li class="list-item">
-                    <a href="#" class="list-link">News</a>
-                </li>
-                <li class="list-item">
-                    <a href="#" class="list-link">Membership</a>
-                </li>
-                <li class="list-item">
-                    <a href="#" class="list-link">Contact</a>
-                </li>
-                <li class="list-item">
-                    <a href="#" class="list-link screen-lg-hidden">Sign In</a>
-                </li>
-                <li class="list-item">
-                    <a href="#" class="list-link screen-lg-hidden">Sign Up</a>
+                <li class="list-item screen-lg-hidden">
+                    <a href="#" class="list-link">Sign Up</a>
                 </li>
             </ul>
         </div>
+
         <div class="list list-right">
             <button class="btn place-items-center" id="theme-toggle-btn">
                 <i class="ri-sun-line sun-icon"></i>
                 <i class="ri-moon-line moon-icon"></i>
-
             </button>
+            <button class="btn place-items-center" id="search-icon">
+                <i class="ri-search-line"></i>
+            </button>
+            <button class="btn place-items-center screen-lg-hidden" id="menu-toggle-icon">
+                <i class="ri-menu-3-line open-menu-icon"></i>
+                <i class="ri-close-line close-menu-icon"></i>
+            </button>
+            <a href="#" class="list-link screen-sm-hidden">Sign In</a>
+            <a href="#" class="list-link screen-sm-hidden btn fancy-border">
+                <span>Sign Up</span>
+            </a>
         </div>
-
     </nav>
 </header>
-    <!-- Search -->
 
-    <!-- Featured articles -->
-    
-    <!-- Quick read -->
+<!-- ========== SEARCH OVERLAY ========== -->
+<div class="search-form-container" id="search-form-container">
+    <div class="form-container-inner">
+        <form action="" class="form">
+            <input type="text" class="form-input" placeholder="Search articles…">
+            <button class="btn form-btn" type="submit">
+                <i class="ri-search-line"></i>
+            </button>
+        </form>
+        <span class="form-note">Or press <kbd>ESC</kbd> to close.</span>
+    </div>
+    <button class="btn place-items-center form-close-btn" id="form-close-btn">
+        <i class="ri-close-line"></i>
+    </button>
+</div>
 
-    <!-- Older posts -->
-    
-    <!-- Popular tags -->
+<!-- ========== FEATURED ARTICLES ========== -->
+<section class="featured-articles">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Featured <span>Articles</span></h2>
+            <a href="#older-posts" class="see-all">See all <i class="ri-arrow-right-line"></i></a>
+        </div>
 
-    <!-- Newsletter -->
-    
-    <!-- Footer -->
+        <div class="swiper featured-swiper">
+            <div class="swiper-wrapper">
 
-    <!-- Swiper.js -->
-    <script src="./assets/js/swiper-bundle.min.js"></script>
-    <!-- Custom script -->
-    <script src="./assets/js/main.js"></script>
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <a href="./post.html" class="featured-article-card">
+                        <div class="article-image-wrapper">
+                            <img src="./assets/images/featured/featured-1.jpg" alt="The Art of AI">
+                            <div class="article-image-overlay">
+                                <span class="category-tag">Technology</span>
+                                <h3 class="title">The Art of AI: How Machine Learning is Reshaping Creative Industries</h3>
+                                <span class="article-date">
+                                    <i class="ri-calendar-line"></i> May 5, 2025 &nbsp;·&nbsp; 8 min read
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <a href="./post.html" class="featured-article-card">
+                        <div class="article-image-wrapper">
+                            <img src="./assets/images/featured/featured-2.jpg" alt="15 Breathtaking Destinations">
+                            <div class="article-image-overlay">
+                                <span class="category-tag">Travel</span>
+                                <h3 class="title">Journey to the Unknown: 15 Breathtaking Destinations for 2025</h3>
+                                <span class="article-date">
+                                    <i class="ri-calendar-line"></i> April 28, 2025 &nbsp;·&nbsp; 6 min read
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <a href="./post.html" class="featured-article-card">
+                        <div class="article-image-wrapper">
+                            <img src="./assets/images/featured/featured-3.jpg" alt="Sustainable Eating">
+                            <div class="article-image-overlay">
+                                <span class="category-tag">Food</span>
+                                <h3 class="title">From Farm to Table: The Revolution of Sustainable Eating</h3>
+                                <span class="article-date">
+                                    <i class="ri-calendar-line"></i> April 20, 2025 &nbsp;·&nbsp; 5 min read
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== QUICK READ ========== -->
+<section class="quick-read section" id="categories">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Quick <span>Read</span></h2>
+            <a href="#older-posts" class="see-all">See all <i class="ri-arrow-right-line"></i></a>
+        </div>
+
+        <div class="swiper quick-read-swiper quick-read-articles">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <a href="./post.html" class="quick-read-article">
+                        <div class="quick-read-article-image-wrapper">
+                            <img src="./assets/images/quick_read/quick_read_1.jpg" alt="Morning Habits">
+                        </div>
+                        <div class="quick-read-article-data">
+                            <span class="category-tag">Fitness</span>
+                            <h3 class="quick-read-article-title">5 Morning Habits That Will Transform Your Entire Day</h3>
+                            <div class="article-data-wrapper">
+                                <div class="article-author">
+                                    <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                                    <span class="author-name">Sara Mitchell</span>
+                                </div>
+                                <span class="article-date">
+                                    <i class="ri-time-line"></i> 4 min
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="./post.html" class="quick-read-article">
+                        <div class="quick-read-article-image-wrapper">
+                            <img src="./assets/images/quick_read/quick_read_2.jpg" alt="Ocean Exploration">
+                        </div>
+                        <div class="quick-read-article-data">
+                            <span class="category-tag">Nature</span>
+                            <h3 class="quick-read-article-title">The Hidden Wonders of Deep Ocean Exploration</h3>
+                            <div class="article-data-wrapper">
+                                <div class="article-author">
+                                    <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                                    <span class="author-name">James Ortega</span>
+                                </div>
+                                <span class="article-date">
+                                    <i class="ri-time-line"></i> 6 min
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="./post.html" class="quick-read-article">
+                        <div class="quick-read-article-image-wrapper">
+                            <img src="./assets/images/quick_read/quick_read_3.jpg" alt="Skincare Routine">
+                        </div>
+                        <div class="quick-read-article-data">
+                            <span class="category-tag">Health</span>
+                            <h3 class="quick-read-article-title">How to Build Your Dream Skincare Routine on Any Budget</h3>
+                            <div class="article-data-wrapper">
+                                <div class="article-author">
+                                    <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                                    <span class="author-name">Lily Chen</span>
+                                </div>
+                                <span class="article-date">
+                                    <i class="ri-time-line"></i> 5 min
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="./post.html" class="quick-read-article">
+                        <div class="quick-read-article-image-wrapper">
+                            <img src="./assets/images/quick_read/quick_read_4.jpg" alt="Urban Gardening">
+                        </div>
+                        <div class="quick-read-article-data">
+                            <span class="category-tag">Nature</span>
+                            <h3 class="quick-read-article-title">The Ultimate Guide to Urban Gardening in Small Spaces</h3>
+                            <div class="article-data-wrapper">
+                                <div class="article-author">
+                                    <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                                    <span class="author-name">Tom Bradley</span>
+                                </div>
+                                <span class="article-date">
+                                    <i class="ri-time-line"></i> 7 min
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="./post.html" class="quick-read-article">
+                        <div class="quick-read-article-image-wrapper">
+                            <img src="./assets/images/quick_read/quick_read_5.jpg" alt="Off the Beaten Path">
+                        </div>
+                        <div class="quick-read-article-data">
+                            <span class="category-tag">Travel</span>
+                            <h3 class="quick-read-article-title">Why Your Next Vacation Should Be Completely Off the Beaten Path</h3>
+                            <div class="article-data-wrapper">
+                                <div class="article-author">
+                                    <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                                    <span class="author-name">Anna Reyes</span>
+                                </div>
+                                <span class="article-date">
+                                    <i class="ri-time-line"></i> 5 min
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="./post.html" class="quick-read-article">
+                        <div class="quick-read-article-image-wrapper">
+                            <img src="./assets/images/quick_read/quick_read_6.jpg" alt="Superfoods">
+                        </div>
+                        <div class="quick-read-article-data">
+                            <span class="category-tag">Food</span>
+                            <h3 class="quick-read-article-title">10 Superfoods You Need to Add to Your Diet This Year</h3>
+                            <div class="article-data-wrapper">
+                                <div class="article-author">
+                                    <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                                </div>
+                                <span class="article-date">
+                                    <i class="ri-time-line"></i> 4 min
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== OLDER POSTS ========== -->
+<section class="older-posts section" id="older-posts">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Latest <span>Articles</span></h2>
+        </div>
+
+        <div class="d-grid older-posts-grid">
+
+            <a href="./post.html" class="older-post-article">
+                <div class="older-post-article-image-wrapper">
+                    <img src="./assets/images/older_posts/older_posts_1.jpg" alt="Social Media">
+                </div>
+                <div class="older-post-article-data">
+                    <span class="category-tag">Health</span>
+                    <h3 class="older-post-article-title">The Psychology Behind Social Media Addiction and How to Break Free</h3>
+                    <p class="article-description">Constant scrolling affects your brain's dopamine system. We explore the science — and practical steps to reclaim your focus.</p>
+                    <div class="article-data-wrapper">
+                        <div class="article-author">
+                            <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                            <span class="author-name">Dr. Priya Nair</span>
+                        </div>
+                        <span class="article-date"><i class="ri-calendar-line"></i> May 1, 2025</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./post.html" class="older-post-article">
+                <div class="older-post-article-image-wrapper">
+                    <img src="./assets/images/older_posts/older_posts_2.jpg" alt="Budget Travel">
+                </div>
+                <div class="older-post-article-data">
+                    <span class="category-tag">Travel</span>
+                    <h3 class="older-post-article-title">Top 12 Budget-Friendly Travel Hacks Every Explorer Must Know</h3>
+                    <p class="article-description">See the world without emptying your wallet. From flight deals to free accommodation, our experts share their best-kept secrets.</p>
+                    <div class="article-data-wrapper">
+                        <div class="article-author">
+                            <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                            <span class="author-name">Marco Delgado</span>
+                        </div>
+                        <span class="article-date"><i class="ri-calendar-line"></i> Apr 24, 2025</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./post.html" class="older-post-article">
+                <div class="older-post-article-image-wrapper">
+                    <img src="./assets/images/older_posts/older_posts_3.jpg" alt="Coding 2025">
+                </div>
+                <div class="older-post-article-data">
+                    <span class="category-tag">Technology</span>
+                    <h3 class="older-post-article-title">Coding in 2025: The Programming Languages You Simply Must Learn</h3>
+                    <p class="article-description">Python, Rust, TypeScript — the language landscape keeps shifting. Here's what's worth your time and why.</p>
+                    <div class="article-data-wrapper">
+                        <div class="article-author">
+                            <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                            <span class="author-name">Kevin Park</span>
+                        </div>
+                        <span class="article-date"><i class="ri-calendar-line"></i> Apr 18, 2025</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./post.html" class="older-post-article">
+                <div class="older-post-article-image-wrapper">
+                    <img src="./assets/images/older_posts/older_posts_4.jpg" alt="Mindfulness">
+                </div>
+                <div class="older-post-article-data">
+                    <span class="category-tag">Health</span>
+                    <h3 class="older-post-article-title">Mindfulness in the Digital Age: A Practical Starter Guide</h3>
+                    <p class="article-description">Meditation apps, breathing exercises, and screen-time limits — small habits that make a surprising difference.</p>
+                    <div class="article-data-wrapper">
+                        <div class="article-author">
+                            <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                            <span class="author-name">Sara Mitchell</span>
+                        </div>
+                        <span class="article-date"><i class="ri-calendar-line"></i> Apr 12, 2025</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./post.html" class="older-post-article">
+                <div class="older-post-article-image-wrapper">
+                    <img src="./assets/images/older_posts/older_posts_5.jpg" alt="Electric Vehicles">
+                </div>
+                <div class="older-post-article-data">
+                    <span class="category-tag">Technology</span>
+                    <h3 class="older-post-article-title">The Future of Electric Vehicles: Solid-State Batteries and Beyond</h3>
+                    <p class="article-description">Range anxiety could soon be history. We look at the next generation of EV technology set to hit roads by 2027.</p>
+                    <div class="article-data-wrapper">
+                        <div class="article-author">
+                            <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                            <span class="author-name">James Ortega</span>
+                        </div>
+                        <span class="article-date"><i class="ri-calendar-line"></i> Apr 7, 2025</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./post.html" class="older-post-article">
+                <div class="older-post-article-image-wrapper">
+                    <img src="./assets/images/older_posts/older_posts_6.jpg" alt="Vegan Cooking">
+                </div>
+                <div class="older-post-article-data">
+                    <span class="category-tag">Food</span>
+                    <h3 class="older-post-article-title">Vegan Cooking: Debunking the 7 Biggest Myths Once and For All</h3>
+                    <p class="article-description">Is it really more expensive? Does it actually taste bland? A nutritionist and chef set the record straight.</p>
+                    <div class="article-data-wrapper">
+                        <div class="article-author">
+                            <img src="./assets/images/author.jpg" alt="Author" class="author-avatar">
+                            <span class="author-name">Lily Chen</span>
+                        </div>
+                        <span class="article-date"><i class="ri-calendar-line"></i> Mar 30, 2025</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== POPULAR TAGS ========== -->
+<section class="popular-tags section" id="popular-tags">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Popular <span>Tags</span></h2>
+        </div>
+
+        <div class="d-grid popular-tags-grid">
+            <a href="#" class="tag-article">
+                <img src="./assets/images/tags/technology-tag.jpg" alt="Technology">
+                <div class="tag-article-data">
+                    <span class="tag-name">Technology</span>
+                </div>
+            </a>
+            <a href="#" class="tag-article">
+                <img src="./assets/images/tags/travel-tag.jpg" alt="Travel">
+                <div class="tag-article-data">
+                    <span class="tag-name">Travel</span>
+                </div>
+            </a>
+            <a href="#" class="tag-article">
+                <img src="./assets/images/tags/food-tag.jpg" alt="Food">
+                <div class="tag-article-data">
+                    <span class="tag-name">Food</span>
+                </div>
+            </a>
+            <a href="#" class="tag-article">
+                <img src="./assets/images/tags/health-tag.jpg" alt="Health">
+                <div class="tag-article-data">
+                    <span class="tag-name">Health</span>
+                </div>
+            </a>
+            <a href="#" class="tag-article">
+                <img src="./assets/images/tags/nature-tag.jpg" alt="Nature">
+                <div class="tag-article-data">
+                    <span class="tag-name">Nature</span>
+                </div>
+            </a>
+            <a href="#" class="tag-article">
+                <img src="./assets/images/tags/fitness-tag.jpg" alt="Fitness">
+                <div class="tag-article-data">
+                    <span class="tag-name">Fitness</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== NEWSLETTER ========== -->
+<section class="newsletter" id="newsletter">
+    <div class="newsletter-container">
+        <h2 class="newsletter-title">Never Miss a Story</h2>
+        <p class="newsletter-subtitle">Join 40,000+ readers and get the best articles delivered straight to your inbox every week.</p>
+        <form class="newsletter-form" novalidate>
+            <input type="email" class="newsletter-input" placeholder="Enter your email address…">
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+        <p class="newsletter-message"></p>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer section" id="footer">
+    <div class="footer-container container d-grid">
+
+        <div class="company-data">
+            <a href="./index.html"><h2 class="logo">NewsFlash</h2></a>
+            <p class="company-description">Your daily dose of technology, travel, food, health, and culture. Quality journalism written by people who care.</p>
+            <ul class="list social-media">
+                <li class="list-item"><a href="#" class="list-link"><i class="ri-instagram-line"></i></a></li>
+                <li class="list-item"><a href="#" class="list-link"><i class="ri-facebook-circle-line"></i></a></li>
+                <li class="list-item"><a href="#" class="list-link"><i class="ri-twitter-line"></i></a></li>
+                <li class="list-item"><a href="#" class="list-link"><i class="ri-youtube-line"></i></a></li>
+            </ul>
+            <span class="copyright-notice">&copy; 2025 NewsFlash. All rights reserved.</span>
+        </div>
+
+        <div>
+            <h6 class="title footer-title">Categories</h6>
+            <ul class="footer-list list">
+                <li class="list-item"><a href="#" class="list-link">Technology</a></li>
+                <li class="list-item"><a href="#" class="list-link">Travel</a></li>
+                <li class="list-item"><a href="#" class="list-link">Food</a></li>
+                <li class="list-item"><a href="#" class="list-link">Health</a></li>
+                <li class="list-item"><a href="#" class="list-link">Nature</a></li>
+                <li class="list-item"><a href="#" class="list-link">Fitness</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h6 class="title footer-title">Quick Links</h6>
+            <ul class="footer-list list">
+                <li class="list-item"><a href="./index.html" class="list-link">Home</a></li>
+                <li class="list-item"><a href="#older-posts" class="list-link">Articles</a></li>
+                <li class="list-item"><a href="#popular-tags" class="list-link">Tags</a></li>
+                <li class="list-item"><a href="#newsletter" class="list-link">Newsletter</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h6 class="title footer-title">Company</h6>
+            <ul class="footer-list list">
+                <li class="list-item"><a href="#" class="list-link">About Us</a></li>
+                <li class="list-item"><a href="#" class="list-link">Contact</a></li>
+                <li class="list-item"><a href="#" class="list-link">Privacy Policy</a></li>
+                <li class="list-item"><a href="#" class="list-link">Careers</a></li>
+                <li class="list-item"><a href="#" class="list-link">Advertise</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="footer-bottom container">
+        <p>Designed &amp; built with ❤ by the NewsFlash team.</p>
+    </div>
+</footer>
+
+<script src="./assets/js/swiper-bundle.min.js"></script>
+<script src="./assets/js/main.js"></script>
 </body>
 </html>

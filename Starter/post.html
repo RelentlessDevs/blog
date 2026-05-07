@@ -1,199 +1,383 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NewsFlash | Post</title>
-    <!-- Favicon -->
+    <title>NewsFlash | The Art of AI: How Machine Learning is Reshaping Creative Industries</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
-    <!-- Remix icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <!-- Swiper.js styles -->
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css"/>
-    <!-- Custom styles -->
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
 
-        <nav class="navbar container">
+<!-- ========== HEADER ========== -->
+<header class="header" id="header">
+    <nav class="navbar container">
+        <a href="./index.html"><h2 class="logo">NewsFlash</h2></a>
 
-            <a href="./index.html">
-                <h2 class="logo">NewsFlash</h2>
-            </a>
-
-            <div class="menu" id="menu">
-                <ul class="list">
-                    <li class="list-item">
-                        <a href="#" class="list-link current">Home</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Categories</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Reviews</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">News</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Membership</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Contact</a>
-                    </li>
-                    <li class="list-item screen-lg-hidden">
-                        <a href="#" class="list-link">Sign in</a>
-                    </li>
-                    <li class="list-item screen-lg-hidden">
-                        <a href="#" class="list-link">Sign up</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="list list-right">
-                <button class="btn place-items-center" id="theme-toggle-btn">
-                    <i class="ri-sun-line sun-icon"></i>
-                    <i class="ri-moon-line moon-icon"></i>
-                </button>
-
-                <button class="btn place-items-center" id="search-icon">
-                    <i class="ri-search-line"></i>
-                </button>
-
-                <button class="btn place-items-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-icon">
-                    <i class="ri-menu-3-line open-menu-icon"></i>
-                    <i class="ri-close-line close-menu-icon"></i>
-                </button>
-
-                <a href="#" class="list-link screen-sm-hidden">Sign in</a>
-                <a href="#" class="list-link screen-sm-hidden btn sign-up-btn fancy-border">
-                    <span>Sign in</span>
-                </a>
-            </div>
-        </nav>
-
-    </header>
-
-    <!-- Search -->
-    <div class="search-form-container container" id="search-form-container">
-
-        <div class="form-container-inner">
-
-            <form action="" class="form">
-                <input type="text" class="form-input" placeholder="What are looking for?">
-                <button class="btn form-btn" type="submit">
-                    <i class="ri-search-line"></i>
-                </button>
-            </form>
-            <span class="form-note">Or press ESC to close.</span>
+        <div class="menu" id="menu">
+            <ul class="list">
+                <li class="list-item"><a href="./index.html" class="list-link">Home</a></li>
+                <li class="list-item"><a href="./index.html#categories" class="list-link">Categories</a></li>
+                <li class="list-item"><a href="./index.html#older-posts" class="list-link">Articles</a></li>
+                <li class="list-item"><a href="./index.html#popular-tags" class="list-link">Tags</a></li>
+                <li class="list-item"><a href="./index.html#newsletter" class="list-link">Newsletter</a></li>
+                <li class="list-item"><a href="./index.html#footer" class="list-link">Contact</a></li>
+                <li class="list-item screen-lg-hidden">
+                    <a href="#" class="list-link">Sign In</a>
+                </li>
+                <li class="list-item screen-lg-hidden">
+                    <a href="#" class="list-link">Sign Up</a>
+                </li>
+            </ul>
         </div>
 
-        <button class="btn form-close-btn place-items-center" id="form-close-btn">
-            <i class="ri-close-line"></i>
-        </button>
+        <div class="list list-right">
+            <button class="btn place-items-center" id="theme-toggle-btn">
+                <i class="ri-sun-line sun-icon"></i>
+                <i class="ri-moon-line moon-icon"></i>
+            </button>
+            <button class="btn place-items-center" id="search-icon">
+                <i class="ri-search-line"></i>
+            </button>
+            <button class="btn place-items-center screen-lg-hidden" id="menu-toggle-icon">
+                <i class="ri-menu-3-line open-menu-icon"></i>
+                <i class="ri-close-line close-menu-icon"></i>
+            </button>
+            <a href="#" class="list-link screen-sm-hidden">Sign In</a>
+            <a href="#" class="list-link screen-sm-hidden btn fancy-border">
+                <span>Sign Up</span>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<!-- ========== SEARCH OVERLAY ========== -->
+<div class="search-form-container" id="search-form-container">
+    <div class="form-container-inner">
+        <form action="" class="form">
+            <input type="text" class="form-input" placeholder="Search articles…">
+            <button class="btn form-btn" type="submit">
+                <i class="ri-search-line"></i>
+            </button>
+        </form>
+        <span class="form-note">Or press <kbd>ESC</kbd> to close.</span>
+    </div>
+    <button class="btn place-items-center form-close-btn" id="form-close-btn">
+        <i class="ri-close-line"></i>
+    </button>
+</div>
+
+<!-- ========== BLOG POST ========== -->
+<section class="blog-post-section section">
+    <div class="container blog-post-layout">
+
+        <!-- Main content -->
+        <article>
+            <!-- Breadcrumb -->
+            <div class="post-breadcrumb">
+                <a href="./index.html">Home</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <a href="#">Technology</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <span>The Art of AI</span>
+            </div>
+
+            <!-- Post header -->
+            <div class="post-header-meta">
+                <span class="category-tag">Technology</span>
+                <span class="post-date"><i class="ri-calendar-line"></i> May 5, 2025</span>
+            </div>
+
+            <h1 class="blog-post-title">
+                The Art of AI: How Machine Learning is Reshaping Creative Industries
+            </h1>
+
+            <!-- Author row -->
+            <div class="post-author-row">
+                <div class="post-author">
+                    <img src="./assets/images/author.jpg" alt="Kevin Park" class="post-author-avatar">
+                    <div>
+                        <p class="author-info-name">Kevin Park</p>
+                        <p class="author-info-role">Senior Technology Writer</p>
+                    </div>
+                </div>
+                <div class="post-meta-icons">
+                    <span class="post-meta-item"><i class="ri-time-line"></i> 8 min read</span>
+                    <span class="post-meta-item"><i class="ri-eye-line"></i> 14.2k views</span>
+                    <span class="post-meta-item"><i class="ri-heart-line"></i> 892 likes</span>
+                </div>
+            </div>
+
+            <!-- Cover image -->
+            <div class="blog-post-cover">
+                <img src="./assets/images/featured/featured-1.jpg" alt="AI and creativity">
+            </div>
+
+            <!-- Post content -->
+            <div class="blog-post-content">
+                <p>
+                    A decade ago, the idea of a machine writing poetry, composing a film score, or generating a photorealistic painting would have seemed like science fiction. Today, it is Tuesday morning. Artificial intelligence has crossed a threshold that most technologists predicted would take far longer to reach — and the creative world is still catching its breath.
+                </p>
+
+                <p>
+                    From Hollywood studios experimenting with AI-generated concept art to music producers using neural networks to draft chord progressions, the footprint of machine learning in the creative industries is growing faster than the regulatory and ethical frameworks designed to contain it. Whether you see that as a liberation or a threat depends largely on which side of the keyboard you sit.
+                </p>
+
+                <h2>The Tools That Changed Everything</h2>
+
+                <p>
+                    The catalyst for the current wave was the arrival of large-scale diffusion models — algorithms trained on billions of image-caption pairs that can generate highly detailed visuals from plain-language descriptions. Tools like Midjourney, Stable Diffusion, and DALL-E democratised a capability that previously required years of technical training or a substantial budget to outsource to human artists.
+                </p>
+
+                <p>
+                    Alongside image generation came text-to-text models capable of producing coherent long-form writing, code, and marketing copy. Then came music generators, voice synthesisers, and video diffusion models. The cumulative effect was a collapse in the cost of producing "good enough" creative work — and a simultaneous explosion in the volume of AI-assisted content flooding every digital channel.
+                </p>
+
+                <img src="./assets/images/trending/trending_1.jpg" alt="AI generating artwork on a screen">
+
+                <h2>What Artists Actually Think</h2>
+
+                <p>
+                    Contrary to the binary narrative that dominates public discourse, most working creatives hold nuanced views on AI. A 2024 survey of 1,800 professional illustrators, musicians, writers, and designers found that:
+                </p>
+
+                <ul>
+                    <li><strong>61%</strong> had experimented with at least one AI tool in the past year.</li>
+                    <li><strong>44%</strong> said it had saved them meaningful time on repetitive tasks (colour-blocking, boilerplate text, reference gathering).</li>
+                    <li><strong>72%</strong> expressed concern that AI-generated work trained on their portfolios without consent constituted a form of intellectual property theft.</li>
+                    <li>Only <strong>18%</strong> believed their core livelihood was currently under direct threat — though that figure climbed to 38% for entry-level and junior roles.</li>
+                </ul>
+
+                <blockquote>
+                    "AI won't replace artists — but artists who use AI will replace artists who don't. And that shift is already happening faster than anyone expected."
+                    <br><br>— Elena Vasquez, Creative Director, Prism Studio
+                </blockquote>
+
+                <h2>The Copyright Conundrum</h2>
+
+                <p>
+                    The legal landscape remains unsettled. In the United States, the Copyright Office has so far declined to register works that are entirely AI-generated, on the grounds that copyright protection requires human authorship. But the grey area of "AI-assisted" work — where a human provides prompts, edits outputs, and makes creative decisions — has yet to be definitively tested in court.
+                </p>
+
+                <p>
+                    Several class-action lawsuits brought by artists against AI companies are working their way through the courts, challenging the legality of training on copyrighted material without permission or compensation. The outcomes will likely set precedents that reshape the industry for decades.
+                </p>
+
+                <img src="./assets/images/trending/trending_2.jpg" alt="Digital artwork being created">
+
+                <h2>The Economic Argument</h2>
+
+                <p>
+                    Proponents of AI in creative industries often invoke historical precedents: photography did not kill painting; digital audio workstations did not end live music; stock photo libraries did not eliminate commercial photography. Each technological shift destroyed some jobs, created others, and ultimately expanded the total size of the creative economy.
+                </p>
+
+                <p>
+                    The counterargument is that the speed and breadth of the current disruption is qualitatively different. Previous tools automated specific, narrow tasks. Current AI models can replicate the outputs of a graphic designer, copywriter, illustrator, and sound designer simultaneously — at a cost approaching zero, at a speed approaching instant.
+                </p>
+
+                <h3>Who Is Winning Right Now</h3>
+
+                <p>
+                    In the short term, the clearest beneficiaries are small businesses and individual creators who previously lacked the budget for professional creative services. A one-person startup can now produce polished brand assets, social media content, and product photography mockups without engaging an agency. For many, this is genuinely democratising.
+                </p>
+
+                <p>
+                    At the other end of the market, large studios and publishers are using AI to accelerate pre-production work — generating concept art to test ideas before committing to expensive production, or using AI-written first drafts as scaffolding for human writers to refine. The human creative still matters; the pipeline has simply become faster and cheaper.
+                </p>
+
+                <h2>What Comes Next</h2>
+
+                <p>
+                    The next frontier is personalisation at scale. Models are now being fine-tuned on individual creators' styles, enabling consistent brand voice and visual identity across enormous volumes of content. For creators, this means the possibility of licensing their style — or the nightmare scenario of having it replicated without consent.
+                </p>
+
+                <p>
+                    Meanwhile, real-time generation is closing the final gap between AI and human creative output. Video models that can render seconds of high-quality footage in minutes today will render in real-time within a handful of years. At that point, the distinction between "AI-generated" and "human-created" content may become essentially unmeasurable to the untrained eye.
+                </p>
+
+                <img src="./assets/images/trending/trending_3.jpg" alt="Futuristic creative workspace">
+
+                <h2>Finding the Balance</h2>
+
+                <p>
+                    The healthiest approach — for individuals, studios, and policymakers alike — appears to be neither uncritical adoption nor blanket rejection, but deliberate integration. That means:
+                </p>
+
+                <ol>
+                    <li>Being transparent about when and how AI is used in creative work.</li>
+                    <li>Advocating for licensing and consent frameworks that compensate creators whose work trains AI systems.</li>
+                    <li>Investing in skills that remain distinctly human: conceptual originality, emotional intelligence, cultural context, and ethical judgment.</li>
+                    <li>Recognising that the best AI-assisted work still requires a skilled human directing, refining, and taking responsibility for the output.</li>
+                </ol>
+
+                <p>
+                    The machines are extraordinarily capable. They are also, for now, incapable of caring about what they make. That distinction — the stake a human has in their own creative work — may prove to be the most defensible differentiator of all.
+                </p>
+            </div>
+
+            <!-- Tags -->
+            <div class="post-tags">
+                <span>Tags:</span>
+                <a href="#" class="post-tag">Artificial Intelligence</a>
+                <a href="#" class="post-tag">Technology</a>
+                <a href="#" class="post-tag">Machine Learning</a>
+                <a href="#" class="post-tag">Creativity</a>
+                <a href="#" class="post-tag">Art</a>
+                <a href="#" class="post-tag">Future of Work</a>
+            </div>
+
+            <!-- Author bio -->
+            <div class="author-bio-box">
+                <img src="./assets/images/author.jpg" alt="Kevin Park" class="author-bio-avatar">
+                <div>
+                    <h4 class="author-bio-name">Kevin Park</h4>
+                    <p class="author-bio-role">Senior Technology Writer</p>
+                    <p class="author-bio-text">Kevin has been covering the intersection of technology and culture for over a decade. He is particularly interested in how emerging technologies reshape creative labour, and has written for major publications across three continents. When not at his keyboard, he is probably at a gallery.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="post-sidebar">
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Recent Posts</h3>
+                <div class="recent-post-item">
+                    <div class="recent-post-thumb">
+                        <img src="./assets/images/trending/trending_1.jpg" alt="Recent post">
+                    </div>
+                    <div class="recent-post-data">
+                        <h4 class="title"><a href="./post.html">Quantum Computing Just Got Closer to Reality</a></h4>
+                        <span class="article-date"><i class="ri-calendar-line"></i> May 3, 2025</span>
+                    </div>
+                </div>
+                <div class="recent-post-item">
+                    <div class="recent-post-thumb">
+                        <img src="./assets/images/trending/trending_2.jpg" alt="Recent post">
+                    </div>
+                    <div class="recent-post-data">
+                        <h4 class="title"><a href="./post.html">The Mental Health Benefits of Solo Travel</a></h4>
+                        <span class="article-date"><i class="ri-calendar-line"></i> Apr 29, 2025</span>
+                    </div>
+                </div>
+                <div class="recent-post-item">
+                    <div class="recent-post-thumb">
+                        <img src="./assets/images/trending/trending_3.jpg" alt="Recent post">
+                    </div>
+                    <div class="recent-post-data">
+                        <h4 class="title"><a href="./post.html">Why Mediterranean Diets Keep Topping the Charts</a></h4>
+                        <span class="article-date"><i class="ri-calendar-line"></i> Apr 25, 2025</span>
+                    </div>
+                </div>
+                <div class="recent-post-item">
+                    <div class="recent-post-thumb">
+                        <img src="./assets/images/trending/trending_4.jpg" alt="Recent post">
+                    </div>
+                    <div class="recent-post-data">
+                        <h4 class="title"><a href="./post.html">Rewilding: How Nature Is Taking Back Our Cities</a></h4>
+                        <span class="article-date"><i class="ri-calendar-line"></i> Apr 21, 2025</span>
+                    </div>
+                </div>
+                <div class="recent-post-item">
+                    <div class="recent-post-thumb">
+                        <img src="./assets/images/trending/trending_5.jpg" alt="Recent post">
+                    </div>
+                    <div class="recent-post-data">
+                        <h4 class="title"><a href="./post.html">The Rise of Slow Fashion and What It Means for You</a></h4>
+                        <span class="article-date"><i class="ri-calendar-line"></i> Apr 16, 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Tags</h3>
+                <div class="sidebar-tags">
+                    <a href="#" class="sidebar-tag">Technology</a>
+                    <a href="#" class="sidebar-tag">Travel</a>
+                    <a href="#" class="sidebar-tag">Food</a>
+                    <a href="#" class="sidebar-tag">Health</a>
+                    <a href="#" class="sidebar-tag">Nature</a>
+                    <a href="#" class="sidebar-tag">Fitness</a>
+                    <a href="#" class="sidebar-tag">AI</a>
+                    <a href="#" class="sidebar-tag">Culture</a>
+                    <a href="#" class="sidebar-tag">Science</a>
+                    <a href="#" class="sidebar-tag">Lifestyle</a>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Newsletter</h3>
+                <p style="font-size:1.4rem; color:var(--text-muted); margin-bottom:1.4rem; line-height:1.7;">
+                    Get the week's best articles in your inbox every Friday.
+                </p>
+                <form class="newsletter-form" novalidate style="flex-direction:column; border-radius:1rem; padding:1.2rem; gap:1rem; max-width:100%; border-color:var(--border); background:var(--surface-alt);">
+                    <input type="email" class="newsletter-input" placeholder="your@email.com" style="color:var(--text);">
+                    <button type="submit" class="newsletter-btn" style="background:var(--accent); color:#fff; width:100%; justify-content:center;">Subscribe</button>
+                </form>
+                <p class="newsletter-message"></p>
+            </div>
+        </aside>
 
     </div>
-    <!-- Blog post -->
-    
-    <!-- Footer -->
-    <footer class="footer section">
-        <div class="footer-container container d-grid">
-            
-            <div class="company-data">
-                <a href="./index.html">
-                    <h2 class="logo">NewsFlash</h2>
-                </a>
-                <p class="company-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, iure. Harum, animi dolores, nam, ad magni expedita.</p>
-                <ul class="list social-media">
-                    <li class="list-item">
-                        <a href="#" class="list-link"><i class="ri-instagram-line"></i></a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link"><i class="ri-facebook-circle-line"></i></a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link"><i class="ri-twitter-line"></i></a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link"><i class="ri-pinterest-line"></i></a>
-                    </li>
-                </ul>
-                <span class="copyright-notice">&copy;2021 NewsFlash. All rights reserved.</span>
-            </div>
+</section>
 
-            <div>
-                <h6 class="title footer-title">Categories</h6>
-                <ul class="footer-list list">
-                    <li class="list-item">
-                        <a href="#" class="list-link">Travel</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Food</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Technology</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Health</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Nature</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Fitness</a>
-                    </li>
-                </ul>
-            </div>
+<!-- ========== FOOTER ========== -->
+<footer class="footer section" id="footer">
+    <div class="footer-container container d-grid">
 
-            <div>
-                <h6 class="title footer-title">Useful links</h6>
-                <ul class="footer-list list">
-                    <li class="list-item">
-                        <a href="#" class="list-link">Home</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Elements</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Tags</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Authors</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Membership</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h6 class="title footer-title">Company</h6>
-                <ul class="footer-list list">
-                    <li class="list-item">
-                        <a href="#" class="list-link">Contact us</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">F.A.Q</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Careers</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Authors</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Memberships</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="company-data">
+            <a href="./index.html"><h2 class="logo">NewsFlash</h2></a>
+            <p class="company-description">Your daily dose of technology, travel, food, health, and culture. Quality journalism written by people who care.</p>
+            <ul class="list social-media">
+                <li class="list-item"><a href="#" class="list-link"><i class="ri-instagram-line"></i></a></li>
+                <li class="list-item"><a href="#" class="list-link"><i class="ri-facebook-circle-line"></i></a></li>
+                <li class="list-item"><a href="#" class="list-link"><i class="ri-twitter-line"></i></a></li>
+                <li class="list-item"><a href="#" class="list-link"><i class="ri-youtube-line"></i></a></li>
+            </ul>
+            <span class="copyright-notice">&copy; 2025 NewsFlash. All rights reserved.</span>
         </div>
-    </footer>
 
-    <!-- Swiper.js -->
-    <script src="./assets/js/swiper-bundle.min.js"></script>
-    <!-- Custom script -->
-    <script src="./assets/js/main.js"></script>
+        <div>
+            <h6 class="title footer-title">Categories</h6>
+            <ul class="footer-list list">
+                <li class="list-item"><a href="#" class="list-link">Technology</a></li>
+                <li class="list-item"><a href="#" class="list-link">Travel</a></li>
+                <li class="list-item"><a href="#" class="list-link">Food</a></li>
+                <li class="list-item"><a href="#" class="list-link">Health</a></li>
+                <li class="list-item"><a href="#" class="list-link">Nature</a></li>
+                <li class="list-item"><a href="#" class="list-link">Fitness</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h6 class="title footer-title">Quick Links</h6>
+            <ul class="footer-list list">
+                <li class="list-item"><a href="./index.html" class="list-link">Home</a></li>
+                <li class="list-item"><a href="./index.html#older-posts" class="list-link">Articles</a></li>
+                <li class="list-item"><a href="./index.html#popular-tags" class="list-link">Tags</a></li>
+                <li class="list-item"><a href="./index.html#newsletter" class="list-link">Newsletter</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h6 class="title footer-title">Company</h6>
+            <ul class="footer-list list">
+                <li class="list-item"><a href="#" class="list-link">About Us</a></li>
+                <li class="list-item"><a href="#" class="list-link">Contact</a></li>
+                <li class="list-item"><a href="#" class="list-link">Privacy Policy</a></li>
+                <li class="list-item"><a href="#" class="list-link">Careers</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="footer-bottom container">
+        <p>Designed &amp; built with ❤ by the NewsFlash team.</p>
+    </div>
+</footer>
+
+<script src="./assets/js/swiper-bundle.min.js"></script>
+<script src="./assets/js/main.js"></script>
 </body>
 </html>
